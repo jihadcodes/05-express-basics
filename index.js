@@ -13,6 +13,8 @@ const port = 3000;
 //   res.send('Hello POST!')
 // })
 
+
+// req.params are used to capture values from the URL path. They are defined in the route path using a colon (:) followed by a parameter name. When a request is made to that route, the value of the parameter can be accessed using req.params.parameterName. This allows for dynamic routing and handling of different values in the URL.
 let user = [
   {
     id: 1,
@@ -57,6 +59,10 @@ let user = [
 ];
 
 app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/user", (req, res) => {
   res.json(user);
 });
 app.get("/user/:id", (req, res) => {
@@ -76,6 +82,14 @@ app.get('/search',(req,res)=>{
   res.json(query);
   console.log(query);
 });
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
